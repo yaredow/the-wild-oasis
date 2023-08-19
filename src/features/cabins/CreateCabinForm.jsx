@@ -20,8 +20,6 @@ function CreateCabinForm() {
     formState: { errors },
   } = useForm();
 
-  console.log(getValues());
-
   const queryClient = useQueryClient();
 
   const { isLoading: isCreating, mutate } = useMutation({
@@ -47,6 +45,7 @@ function CreateCabinForm() {
       <FormRow label="Cabin name" error={errors?.name?.message}>
         <Input
           type="text"
+          disabled={isCreating}
           id="name"
           {...register("name", {
             required: "This field is required",
@@ -57,6 +56,7 @@ function CreateCabinForm() {
       <FormRow label="Maximum capacity" error={errors?.maxCapacity?.message}>
         <Input
           type="number"
+          disabled={isCreating}
           id="maxCapacity"
           {...register("maxCapacity", {
             required: "This field is required",
@@ -71,6 +71,7 @@ function CreateCabinForm() {
       <FormRow label="Regular price" error={errors?.regularPrice?.message}>
         <Input
           type="number"
+          disabled={isCreating}
           id="regularPrice"
           {...register("regularPrice", {
             required: "This field is required",
@@ -85,31 +86,39 @@ function CreateCabinForm() {
       <FormRow label="Discount" error={errors?.discount?.message}>
         <Input
           type="number"
+          disabled={isCreating}
           id="discount"
           defaultValue={0}
           {...register("discount", {
             required: "This field is required",
-            validate: (value) =>
-              value < getValues().regularPrice ||
-              "Discount should be less than the regualar price",
+            validate: (value) => {
+              const discountValue = parseFloat(value);
+              const regularPriceValue = parseFloat(getValues().regularPrice);
+
+              return (
+                discountValue < regularPriceValue ||
+                "Discount should be less than regular price"
+              );
+            },
           })}
         />
       </FormRow>
 
       <FormRow
         label="Description for website"
+        disabled={isCreating}
         error={errors?.description?.message}
       >
         <Textarea type="number" id="description" defaultValue="" />
       </FormRow>
 
       <FormRow label="Cabin photo" error={errors?.image?.message}>
-        <FileInput id="image" accept="image/*" />
+        <FileInput id="image" accept="image/*" disabled={isCreating} />
       </FormRow>
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button variation="secondary" type="reset">
+        <Button variation="secondary" type="reset" disabled={isCreating}>
           Cancel
         </Button>
         <Button disabled={isCreating}>Add cabin</Button>
