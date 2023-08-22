@@ -1,8 +1,13 @@
-# React + Vite
+# The Wild Oasis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Wild Oasis is a full-stack web application that allows users to explore, book, and review nature retreats around the world. It uses React, React Query, Styled Components, React Hook Form, Supabase, and Chart.js to create a modern and responsive user interface. The application also features authentication, dark mode, and data visualization.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse and search for nature retreats by location, price, rating, and availability
+- View detailed information and photos of each retreat
+- Write and read reviews from other users
+- Manage your profile and bookings
+- Switch between light and dark mode
+- See statistics and charts of your bookings and reviews
+
