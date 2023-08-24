@@ -5,13 +5,14 @@ import { toast } from "react-hot-toast";
 export default function useUpdateSetting() {
   const queryClient = useQueryClient();
   const { isLoading: isUpdating, mutate: updateSetting } = useMutation({
-    mutationFn: () => updateSettingApi(),
+    mutationFn: updateSettingApi,
     onSuccess: () => {
       toast.success("Settings updated successfuly");
       queryClient.invalidateQueries({ queryKey: ["setttings"] });
     },
-    onError: () => {
-      toast.error("Settings could not be edited");
+    onError: (error) => {
+      toast.error("Settings could not be updated");
+      console.error(error);
     },
   });
   return { isUpdating, updateSetting };

@@ -32,7 +32,6 @@ function CreateCabinForm() {
   });
 
   function onSubmit(data) {
-    console.log(data);
     mutate({ ...data, image: data.image[0] });
   }
 
@@ -128,7 +127,6 @@ function CreateCabinForm() {
         <Button variation="secondary" type="reset" disabled={isCreating}>
           Cancel
         </Button>
-        <Button disabled={isCreating}>Add cabin</Button>
       </FormRow>
     </Form>
   );
