@@ -33,7 +33,7 @@ function CabinTable() {
   const modifier = direction === "asc" ? 1 : -1;
 
   const sortedCabin = filteredCabin.sort(
-    (a, b) => a[field] - b[field] * modifier
+    (a, b) => (a[field] - b[field]) * modifier
   );
 
   const sortedCabinByPrice = filteredCabin.sort(
@@ -54,7 +54,7 @@ function CabinTable() {
           <div></div>
         </Table.Header>
         <Table.Body
-          data={sortBy === "price-desc" ? sortedCabinByPrice : sortedCabin}
+          data={sortedCabin}
           render={(cabin) => <CabinRow cabin={cabin} key={cabin.id} />}
         />
       </Table>
