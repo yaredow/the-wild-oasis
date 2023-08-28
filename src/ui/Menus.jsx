@@ -109,7 +109,7 @@ function List({ id, children }) {
   if (openId !== id) return null;
 
   return createPortal(
-    <StyledList position={position} ref={ref}>
+    <StyledList $position={position} ref={ref}>
       {children}
     </StyledList>,
     document.body
