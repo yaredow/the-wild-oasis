@@ -4,42 +4,13 @@ import Menus from "../../ui/Menus";
 import Empty from "../../ui/Empty";
 import useBooking from "./useBooking";
 import Spinner from "../../ui/Spinner";
-import { useSearchParams } from "react-router-dom";
+import Pagination from "../../ui/Pagination";
 
 function BookingTable() {
-  const { isLoading, bookings } = useBooking();
-  const [searchParams] = useSearchParams();
-  console.log(bookings);
+  const { isLoading, bookings, count } = useBooking();
 
   if (isLoading) return <Spinner />;
   if (!bookings?.length) return <Empty resourceName="bookings" />;
-
-  // FILTER
-  const filterValue = searchParams.get("status") || "all";
-
-  let filteredBookings;
-
-  if (filterValue === "all") filteredBookings = bookings;
-  if (filterValue === "checked-in")
-    filteredBookings = bookings.filter(
-      (booking) => booking.status === "checked-in"
-    );
-  if (filterValue === "checked-out")
-    filteredBookings = bookings.filter(
-      (booking) => booking.status === "checked-out"
-    );
-  if (filterValue === "unconfirmed")
-    filteredBookings = bookings.filter(
-      (booking) => booking.status === "unconfirmed"
-    );
-
-  // SORT
-  const sortBy = searchParams.get("sortBy") || "startDate-desc";
-  const [field, direction] = sortBy.split("-");
-  const modifier = direction === "asc" ? 1 : -1;
-  const sortedBookings = filteredBookings.sort(
-    (a, b) => (a[field] - b[field]) * modifier
-  );
 
   return (
     <Menus>
@@ -54,11 +25,15 @@ function BookingTable() {
         </Table.Header>
 
         <Table.Body
-          data={sortedBookings}
+          data={bookings}
           render={(booking) => (
             <BookingRow key={booking.id} booking={booking} />
           )}
         />
+
+        <Table.Footer>
+          <Pagination count={count} />
+        </Table.Footer>
       </Table>
     </Menus>
   );
