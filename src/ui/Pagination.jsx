@@ -79,7 +79,6 @@ function Pagination({ count }) {
     setSearchParams(searchParams);
   }
 
-  console.log(pageCount <= 1);
   if (pageCount <= 1) return null;
 
   return (
@@ -91,7 +90,6 @@ function Pagination({ count }) {
         </span>{" "}
         of <span>{count}</span> results
       </p>
-
       <Buttons>
         <PaginationButton onClick={prevPage} disabled={currentPage === 1}>
           <HiChevronLeft />
