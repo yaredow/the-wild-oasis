@@ -15,7 +15,6 @@ import { useEffect, useState } from "react";
 import { useCheckingIn } from "./useCheckingIn";
 import useSettings from "../settings/useSetting";
 import { formatCurrency } from "../../utils/helpers";
-import { format } from "date-fns";
 
 const Box = styled.div`
   /* Box */
@@ -66,6 +65,7 @@ function CheckinBooking() {
       checking({ bookingId, breakfast: {} });
     }
   }
+  function handleCheckOut() {}
 
   return (
     <>
