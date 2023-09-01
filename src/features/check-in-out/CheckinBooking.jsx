@@ -65,7 +65,6 @@ function CheckinBooking() {
       checking({ bookingId, breakfast: {} });
     }
   }
-  function handleCheckOut() {}
 
   return (
     <>
