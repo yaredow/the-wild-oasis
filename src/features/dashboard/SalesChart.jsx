@@ -11,9 +11,7 @@ import {
   YAxis,
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
-import { BiLogoFacebookSquare } from "react-icons/bi";
 import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
-import { da } from "date-fns/locale";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
