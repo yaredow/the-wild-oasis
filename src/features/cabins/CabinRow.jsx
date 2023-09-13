@@ -48,6 +48,10 @@ const Discount = styled.div`
   color: var(--color-green-700);
 `;
 
+const Fits = styled.div`
+  font-weight: 500;
+`;
+
 function CabinRow({ cabin }) {
   const { isDeleting, deleteCabin } = useDeleteCabin();
 
@@ -59,7 +63,6 @@ function CabinRow({ cabin }) {
     discount,
     maxCapacity,
     regularPrice,
-    createdAt,
   } = cabin;
 
   const { isCreating, createCabin } = useCreateCabin();
@@ -79,7 +82,7 @@ function CabinRow({ cabin }) {
     <Table.Row>
       <Img src={image} />
       <Cabin>{name}</Cabin>
-      <div>Fits up to {maxCapacity} people</div>
+      <Fits>Fits up to {maxCapacity} people</Fits>
       <Price>{formatCurrency(regularPrice)}</Price>
       {discount ? (
         <Discount>{formatCurrency(discount)}</Discount>
