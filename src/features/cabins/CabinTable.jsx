@@ -36,10 +36,6 @@ function CabinTable() {
     (a, b) => (a[field] - b[field]) * modifier
   );
 
-  const sortedCabinByPrice = filteredCabin.sort(
-    (a, b) => (a[field] - b[field]) * modifier
-  );
-
   if (isLoading) return <Spinner />;
 
   return (
