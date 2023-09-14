@@ -75,3 +75,9 @@ The Wild Oasis is a full-stack web application that allows users to explore, boo
 <kbd><img width="956" alt="bookings" src="https://github.com/yaredow/the-wild-oasis/blob/main/public/screenshots/booking.PNG?raw=true"></kbd>
 
 <kbd><img width="957" alt="single-booking" src="https://github.com/sudeepmahato16/the-wild-oasis/assets/122378993/33d830fd-6887-467e-b79f-cab427f33680"></kbd>
+
+<kbd><img width="957" alt="cabin" src="https://github.com/yaredow/the-wild-oasis/blob/main/public/screenshots/cabin.PNG?raw=true"></kbd>
+
+<kbd><img width="957" alt="user" src="https://github.com/yaredow/the-wild-oasis/blob/main/public/screenshots/user.PNG?raw=true"></kbd>
+
+<kbd><img width="957" alt="settings" src="https://github.com/yaredow/the-wild-oasis/blob/main/public/screenshots/setting.PNG?raw=true"></kbd>
