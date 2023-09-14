@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import Dashboard from "./pages/Dashboard";
 import Bookings from "./pages/Bookings";
@@ -30,7 +29,6 @@ function App() {
   return (
     <DarkModeProvider>
       <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools client={queryClient} />
         <GlobalStyle />
         <BrowserRouter>
           <Routes>
