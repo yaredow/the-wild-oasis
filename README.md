@@ -7,7 +7,7 @@
   
    # The Wild Oasis
 
-    The Wild Oasis is a full-stack web application that allows users to explore, book, and review nature retreats around the world. It uses React, React Query, Styled Components, React Hook Form, Supabase, and Chart.js to create a modern and responsive user interface. The application also features authentication, dark mode, and data visualization.
+The Wild Oasis is a full-stack web application that allows users to explore, book, and review nature retreats around the world. It uses React, React Query, Styled Components, React Hook Form, Supabase, and Chart.js to create a modern and responsive user interface. The application also features authentication, dark mode, and data visualization.
 
 </div>
 
