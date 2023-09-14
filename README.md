@@ -81,3 +81,7 @@ The Wild Oasis is a full-stack web application that allows users to explore, boo
 <kbd><img width="957" alt="user" src="https://github.com/yaredow/the-wild-oasis/blob/main/public/screenshots/user.PNG?raw=true"></kbd>
 
 <kbd><img width="957" alt="settings" src="https://github.com/yaredow/the-wild-oasis/blob/main/public/screenshots/setting.PNG?raw=true"></kbd>
+
+### Try Demo
+
+https://the-wild-oasis-yared.netlify.app/
