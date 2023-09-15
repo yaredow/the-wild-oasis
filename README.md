@@ -85,3 +85,5 @@ The Wild Oasis is a full-stack web application that allows users to explore, boo
 ### Try Demo
 
 https://the-wild-oasis-yared.netlify.app/
+Email: yared@example.com
+Password: dopellex11
